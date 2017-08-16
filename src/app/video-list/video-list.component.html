@@ -1,3 +1,10 @@
-<p>
-  video-list works!
-</p>
+<h2>
+    {{ title }}:
+</h2>
+<ul>
+    <li *ngFor="let item of videoList">
+        <a href="{{ item.slug }}" *ngIf="item.slug == 'item-1'" style="color: green">{{ item.name }}</a>
+        <a href="{{ item.slug }}" *ngIf="item.slug != 'item-1'" style="color: red">{{ item.name }}</a>
+    </li>
+</ul>
+
