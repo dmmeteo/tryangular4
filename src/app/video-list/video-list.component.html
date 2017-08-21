@@ -3,8 +3,10 @@
 </h2>
 <ul style="text-align: left">
     <li *ngFor="let item of videoList">
-        <a href="videos/{{ item.slug }}" *ngIf="item.slug == 'item-1'" style="color: green">{{ item.name }}</a>
-        <a href="videos/{{ item.slug }}" *ngIf="item.slug != 'item-1'" style="color: red">{{ item.name }}</a>
+        <a href="videos/{{ item.slug }}" style="color: green">{{ item.name }}</a>
+        <iframe width="300" height="200" [src]='getEmbedUrl(item)' *ngIf='item.embed' frameborder="0" allowfullscreen>
+            Loading...
+        </iframe>
     </li>
 </ul>
 
