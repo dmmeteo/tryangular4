@@ -1,10 +1,10 @@
 <h2>
-    {{ title }}:
+    {{ title }} {{ todayDate | date:"dd-MM-yyyy hh:mm" }}
 </h2>
 <ul style="text-align: left">
     <li *ngFor="let item of videoList">
         <a href="videos/{{ item.slug }}" style="color: green">{{ item.name }}</a>
-        <iframe width="300" height="200" [src]='getEmbedUrl(item)' *ngIf='item.embed' frameborder="0" allowfullscreen>
+        <iframe width="300" height="200" [src]="getEmbedUrl(item) | safe" *ngIf='item.embed' frameborder="0" allowfullscreen>
             Loading...
         </iframe>
     </li>

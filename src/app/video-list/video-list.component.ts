@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DomSanitizer} from "@angular/platform-browser";
+
 
 @Component({
     selector: 'app-video-list',
@@ -8,7 +8,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class VideoListComponent implements OnInit {
     title = 'List of videos';
-    // videoList = ['Item 1', 'Item 2', 'Item 3']; //LIST
+    todayDate; // https://angular.io/docs/ts/latest/guide/pipes.html
     videoList = [
         {
             name: 'Item 1',
@@ -23,16 +23,22 @@ export class VideoListComponent implements OnInit {
         {
             name: 'Item 3',
             slug: 'item-3',
-            embed: null
+            embed: 'gfb93nfdt4c',
+        },
+        {
+            name: 'Item 4',
+            slug: 'item-4',
+            embed: 'fI28Y4_UqIg',
         }
     ]
 
-    constructor(private sanitizer: DomSanitizer) {}
+    constructor() {}
 
     ngOnInit() {
+        this.todayDate = new Date()
     }
 
     getEmbedUrl(item) {
-        return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + item.embed)
+        return 'https://www.youtube.com/embed/' + item.embed
     }
 }
