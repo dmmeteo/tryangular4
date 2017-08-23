@@ -1,41 +1,29 @@
-import {Component, OnInit} from '@angular/core';
-
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Http} from '@angular/http';
 
 @Component({
     selector: 'app-video-list',
     templateUrl: './video-list.component.html',
     styleUrls: ['./video-list.component.css']
 })
-export class VideoListComponent implements OnInit {
+export class VideoListComponent implements OnInit, OnDestroy {
+    private req: any;
     title = 'List of videos';
     todayDate; // https://angular.io/docs/ts/latest/guide/pipes.html
-    videoList = [
-        {
-            name: 'Item 1',
-            slug: 'item-1',
-            embed: 'y72WusrZdyI',
-        },
-        {
-            name: 'Item 2',
-            slug: 'item-2',
-            embed: '1cbAvypPAO0',
-        },
-        {
-            name: 'Item 3',
-            slug: 'item-3',
-            embed: 'gfb93nfdt4c',
-        },
-        {
-            name: 'Item 4',
-            slug: 'item-4',
-            embed: 'fI28Y4_UqIg',
-        }
-    ]
+    videoList: [any];
 
-    constructor() {}
+    constructor(private http: Http) {}
 
     ngOnInit() {
         this.todayDate = new Date()
+        this.req = this.http.get('assets/json/videos.json').subscribe(data => {
+            console.log(data.json())
+            this.videoList = data.json()
+        }) // HTTP METHOD
+    }
+
+    ngOnDestroy() {
+        this.req.unsubscribe()
     }
 
     getEmbedUrl(item) {

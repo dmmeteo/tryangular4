@@ -1,3 +1,8 @@
-<p>
-  {{slug}} bla bla!
-</p>
+<div *ngIf='!video'>Loading...</div>
+<h2>{{ video?.name }}</h2>
+<p>{{ video?.slug }}</p>
+<p>{{ video?.embed }}</p>
+
+<!--<iframe class="col-10" [src]='video.slug' *ngIf='video.embed' frameborder="0" allowfullscreen>-->
+<!--Loading...-->
+<!--</iframe>-->
