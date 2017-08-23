@@ -1,14 +1,15 @@
 // TODO https://angular.io/docs/ts/latest/guide/router.html
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { VideoListComponent } from './video-list/video-list.component';
-import { VideoDetailComponent } from './video-detail/video-detail.component';
+import {HomeComponent} from './home/home.component';
+import {VideoListComponent} from './video-list/video-list.component';
+import {VideoDetailComponent} from './video-detail/video-detail.component';
 
 const appRoutes: Routes = [
     {
         path: '',
-        component: VideoListComponent,
+        component: HomeComponent,
     },
     {
         path: 'videos',
@@ -31,4 +32,5 @@ const appRoutes: Routes = [
     ]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
