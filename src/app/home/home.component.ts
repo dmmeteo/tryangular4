@@ -9,7 +9,7 @@ import {Http} from '@angular/http';
 })
 export class HomeComponent implements OnInit, OnDestroy {
     private req: any;
-    homeImageList: [any];
+    homeImageList = []; // not declared but equal
 
     constructor(private http: Http, private router: Router) {}
 
