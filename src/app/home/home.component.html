@@ -1,13 +1,13 @@
 <div class="row justify-content-center">
     <div class="col-10">
-        <carousel class="text-center">
+        <carousel class="text-center" *ngIf='homeImageList'>
             <slide *ngFor="let item of homeImageList">
-                <a href="{{ item.link }}" (click)='preventNormal($event, item)'>
+                <a href="/videos/{{ item.slug }}" (click)='preventNormal($event, item)'>
                     <img [src]='item.image' alt="{{ item.title }}">
                 </a>
                 <div class="carousel-caption">
                     <h3>{{ item.title }}</h3>
-                    <p>{{ item.discription }}</p>
+                    <p>{{ item?.description }}</p>
                 </div>
             </slide>
         </carousel>

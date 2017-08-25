@@ -1,22 +1,34 @@
 [
     {
-        "name": "Item 1",
+        "title": "Item 1",
+        "description": "Nulla vitae elit libero, a pharetra augue mollis interdum.",
         "slug": "item-1",
-        "embed": "y72WusrZdyI"
+        "image": "assets/images/nature/4.jpg",
+        "embed": "y72WusrZdyI",
+        "featured": true
     },
     {
-        "name": "Item 2",
+        "title": "Item 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "slug": "item-2",
-        "embed": "1cbAvypPAO0"
+        "image": "assets/images/nature/5.jpg",
+        "embed": "1cbAvypPAO0",
+        "featured": true
     },
     {
-        "name": "Item 3",
+        "title": "Item 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "slug": "item-3",
-        "embed": "gfb93nfdt4c"
+        "image": "assets/images/nature/6.jpg",
+        "embed": "gfb93nfdt4c",
+        "featured": false
     },
     {
-        "name": "Item 4",
+        "title": "Item 4",
+        "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
         "slug": "item-4",
-        "embed": "fI28Y4_UqIg"
+        "image": "assets/images/nature/5.jpg",
+        "embed": "fI28Y4_UqIg",
+        "featured": true
     }
 ]
