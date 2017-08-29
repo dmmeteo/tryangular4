@@ -1,0 +1,8 @@
+<p *ngIf='query'>
+    Searched for <b>{{ query }}</b>...
+</p>
+
+<div class="text-center" *ngIf='!query'>
+    <h1>Search something</h1>
+    <app-search></app-search>
+</div>

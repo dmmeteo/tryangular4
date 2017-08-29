@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
     submitSearch(event, formData) {
         console.log(event);
         console.log(formData.value)
-        let query = form.value['q']
+        let query = formData.value['q']
         if (query) {
             this.roueter.navigate(['/search', {q: query}])
         }
