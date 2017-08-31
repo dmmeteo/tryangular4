@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,19 +8,25 @@ import {Router} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
     searchLocation = 'Moon';
-    searchQuery: any;
+    searchQuery: string;
+    @Input()
+    passedQuery: string;
 
     constructor(private roueter: Router) {}
 
     ngOnInit() {
+        // console.log(this.passedQuery)
+        if (this.searchQuery) {
+            this.passedQuery = this.searchQuery
+        }
     }
 
     submitSearch(event, formData) {
-        console.log(event);
-        console.log(formData.value)
-        let query = formData.value['q']
-        if (query) {
-            this.roueter.navigate(['/search', {q: query}])
+        // console.log(event);
+        // console.log(formData.value)
+        const searchQuery = formData.value['q']
+        if (searchQuery) {
+            this.roueter.navigate(['/search', {q: searchQuery}])
         }
     }
 }
