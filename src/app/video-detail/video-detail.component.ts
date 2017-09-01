@@ -2,6 +2,9 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Http} from '@angular/http';
 
+import {VideoService} from '../videos/video.service'
+
+// TODO normal videos details
 
 @Component({
     selector: 'app-video-detail',
