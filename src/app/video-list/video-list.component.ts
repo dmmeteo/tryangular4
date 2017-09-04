@@ -9,7 +9,6 @@ import {VideoService} from '../videos/video.service';
 })
 export class VideoListComponent implements OnInit, OnDestroy {
     private req: any;
-    title = 'List of videos';
     todayDate; // https://angular.io/docs/ts/latest/guide/pipes.html
     videoList: [any];
 
@@ -18,7 +17,6 @@ export class VideoListComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.todayDate = new Date()
         this.req = this._video.list().subscribe(data => {
-            console.log(data)
             this.videoList = data as [any]
         }) // HTTP METHOD
     }

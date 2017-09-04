@@ -1,8 +1,8 @@
-<div *ngIf='!video'>Loading...</div>
-<h2>{{ video?.name }}</h2>
-<p>{{ video?.slug }}</p>
-<p>{{ video?.embed }}</p>
-
-<!--<iframe class="col-10" [src]='video.slug' *ngIf='video.embed' frameborder="0" allowfullscreen>-->
-<!--Loading...-->
-<!--</iframe>-->
+<div *ngIf='!video'>Video not found...</div>
+<h2>{{ video?.title }}</h2>
+<p>{{ video?.description }}</p>
+<div class="d-flex flex-column m-3">
+    <iframe style="min-height: 400px;" [src]="getEmbedUrl(video) | safe" frameborder="0" allowfullscreen>
+        Loading...
+    </iframe>
+</div>

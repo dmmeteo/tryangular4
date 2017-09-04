@@ -1,12 +1,12 @@
-<h2>
-    {{ title }} {{ todayDate | date:"dd-MM-yyyy hh:mm" }}
-</h2>
-<ul style="text-align: left">
-    <li *ngFor="let item of videoList">
-        <a href="videos/{{ item.slug }}" style="color: green">{{ item.title }}</a>
-        <iframe width="300" height="200" [src]="getEmbedUrl(item) | safe" *ngIf='item.embed' frameborder="0" allowfullscreen>
+<div class="card-columns d-flex flex-wrap">
+    <div *ngFor="let item of videoList" class="card m-2" style="max-width: 30%;">
+        <iframe class="card-img-top" [src]="getEmbedUrl(item) | safe" *ngIf='item.embed' frameborder="0"
+                allowfullscreen>
             Loading...
         </iframe>
-    </li>
-</ul>
-
+        <div class="card-body">
+            <p class="card-text">{{ item.description }}</p>
+            <a href="videos/{{ item.slug }}" class="btn btn-primary">Go to {{ item.title }}</a>
+        </div>
+    </div>
+</div>
