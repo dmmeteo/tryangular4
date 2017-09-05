@@ -4,3 +4,17 @@
 <p *ngIf='query'>
     Searched for <b>{{ query }}</b>...
 </p>
+
+<div class="card-columns d-flex flex-wrap">
+    <div *ngFor="let item of videoList" class="card m-2" style="max-width: 47%;">
+        <iframe class="card-img-top" [src]="getEmbedUrl(item) | safe" *ngIf='item.embed' frameborder="0"
+                allowfullscreen>
+            Loading...
+        </iframe>
+        <div class="card-body">
+            <p class="card-text">{{ item.description }}</p>
+            <a href="videos/{{ item.slug }}" class="btn btn-primary">Go to {{ item.title }}</a>
+        </div>
+    </div>
+</div>
+
