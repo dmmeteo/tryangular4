@@ -2,7 +2,7 @@
     <div class="col-10">
         <carousel class="text-center" *ngIf='homeImageList'>
             <slide *ngFor="let item of homeImageList">
-                <a href="/videos/{{ item.slug }}" (click)='preventNormal($event, item)'>
+                <a routerLink="/videos/{{ item.slug }}" (click)='preventNormal($event, item)'>
                     <img [src]='item.image' alt="{{ item.title }}">
                 </a>
                 <div class="carousel-caption">
