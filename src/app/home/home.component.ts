@@ -5,6 +5,7 @@ import {Http} from '@angular/http';
 import {VideoItem} from '../videos/video';
 import {VideoService} from '../videos/video.service';
 
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -14,6 +15,7 @@ import {VideoService} from '../videos/video.service';
 export class HomeComponent implements OnInit, OnDestroy {
     private req: any;
     homeImageList = [] as [VideoItem]; // not declared but equal
+    videoListDefaultImages = 'assets/images/natere/5.jpg';
 
     constructor(private http: Http, private router: Router, private _video: VideoService) {}
 
