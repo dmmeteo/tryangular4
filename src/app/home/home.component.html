@@ -1,7 +1,18 @@
 <div class="row justify-content-center">
     <div class="col-10">
         <carousel class="text-center" *ngIf='homeImageList'>
-            <slide *ngFor="let item of homeImageList">
+            <slide>
+                <a class="" routerLink="/videos/" routerLinkActive="active">
+                    <img [src]='videoListDefaultImages'>
+                </a>
+                <div class="carousel-caption">
+                    <h3>Default Image</h3>
+                    <a routerLink="/videos/" routerLinkActive="active" class="btn btn-primary">
+                        View videos
+                    </a>
+                </div>
+            </slide>
+            <slide class="" *ngFor="let item of homeImageList">
                 <a routerLink="/videos/{{ item.slug }}" (click)='preventNormal($event, item)'>
                     <img [src]='item.image' alt="{{ item.title }}">
                 </a>

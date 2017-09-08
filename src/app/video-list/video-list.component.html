@@ -1,5 +1,5 @@
 <div class="card-columns d-flex flex-wrap">
-    <div *ngFor="let item of videoList" class="card m-2" style="max-width: 30%;">
+    <div *ngFor="let item of videoList" class="card border-dark m-2" style="width: 22rem;">
         <iframe class="card-img-top" [src]="getEmbedUrl(item) | safe" *ngIf='item.embed' frameborder="0"
                 allowfullscreen>
             Loading...
